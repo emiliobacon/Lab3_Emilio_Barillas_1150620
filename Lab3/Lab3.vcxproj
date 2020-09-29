@@ -118,9 +118,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cartas.cpp" />
+    <ClCompile Include="ejemplo.cpp" />
+    <ClCompile Include="Listas.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cartas.h" />
+    <ClInclude Include="ejemplo.h" />
+    <ClInclude Include="Listas.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -18,9 +18,27 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cartas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Listas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ejemplo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cartas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Listas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ejemplo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
