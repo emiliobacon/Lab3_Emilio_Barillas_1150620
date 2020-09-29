@@ -1,8 +1,9 @@
 #pragma once
 #include "Cartas.h" //>referncia a la clase
-class Listas 
+ref class Listas 
 {
 public: 
+
 	Cartas* joker; //parámetros 
 	int cant;
 
