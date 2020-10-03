@@ -29,14 +29,7 @@ namespace Lab3 {
 		Listas* grupo7 = new Listas();
 		int movimientos = 0; 
 		int tiempo = 0;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	public:
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+	
 
 		   int posicionmonton = 0;
 
@@ -68,7 +61,14 @@ namespace Lab3 {
 	public:
 	private: System::Windows::Forms::Label^ lblmovimiento;
 	private: System::Windows::Forms::Timer^ timer1;
-
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	public:
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 
 
 
