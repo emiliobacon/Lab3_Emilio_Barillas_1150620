@@ -6,7 +6,7 @@ Cartas::Cartas(int num, char tono) {
 	color = tono; 
 	show = false; 
 	siguiente = nullptr; 
-
+	//pruebagit
 
 }
 void Cartas::Mostrar() {
