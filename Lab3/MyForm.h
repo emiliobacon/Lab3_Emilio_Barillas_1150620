@@ -29,7 +29,15 @@ namespace Lab3 {
 		Listas* grupo7 = new Listas();
 		int movimientos = 0; 
 		int tiempo = 0;
-	
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	public:
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+
 		   int posicionmonton = 0;
 
 
@@ -61,13 +69,13 @@ namespace Lab3 {
 	private: System::Windows::Forms::Label^ lblmovimiento;
 	private: System::Windows::Forms::Timer^ timer1;
 
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -103,13 +111,6 @@ namespace Lab3 {
 			this->btnsiguiente = (gcnew System::Windows::Forms::Button());
 			this->lblmoton = (gcnew System::Windows::Forms::Label());
 			this->dataTablero = (gcnew System::Windows::Forms::DataGridView());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -120,6 +121,13 @@ namespace Lab3 {
 			this->lbltiempo = (gcnew System::Windows::Forms::Label());
 			this->lblmovimiento = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTablero))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -155,48 +163,6 @@ namespace Lab3 {
 			this->dataTablero->ReadOnly = true;
 			this->dataTablero->Size = System::Drawing::Size(795, 362);
 			this->dataTablero->TabIndex = 2;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Column1";
-			this->Column1->Name = L"Column1";
-			this->Column1->ReadOnly = true;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Column2";
-			this->Column2->Name = L"Column2";
-			this->Column2->ReadOnly = true;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Column3";
-			this->Column3->Name = L"Column3";
-			this->Column3->ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Column4";
-			this->Column4->Name = L"Column4";
-			this->Column4->ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Column5";
-			this->Column5->Name = L"Column5";
-			this->Column5->ReadOnly = true;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Column6";
-			this->Column6->Name = L"Column6";
-			this->Column6->ReadOnly = true;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Column7";
-			this->Column7->Name = L"Column7";
-			this->Column7->ReadOnly = true;
 			// 
 			// label1
 			// 
@@ -277,6 +243,48 @@ namespace Lab3 {
 			this->timer1->Enabled = true;
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"";
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Column2";
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Column3";
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Column4";
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Column5";
+			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Column6";
+			this->Column6->Name = L"Column6";
+			this->Column6->ReadOnly = true;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Column7";
+			this->Column7->Name = L"Column7";
+			this->Column7->ReadOnly = true;
 			// 
 			// MyForm
 			// 
