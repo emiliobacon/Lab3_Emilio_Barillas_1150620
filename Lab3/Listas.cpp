@@ -5,32 +5,109 @@
 Listas::Listas(){
 	joker = nullptr;
 	cant = 0; 
+	ultimacarta = nullptr;
+
 }
 
-void Listas::agregarCarta(int numero, char pigmento) {
+void Listas::eliminarinicio() {
+	Cartas* temp = joker; 
+	if (cant > 0) {
+		joker = temp->siguiente;
 
-	Cartas x = Cartas(numero, pigmento);//nuevo nodo
+		if (cant == 1) {
+			ultimacarta = joker;
+			
+		}
+		cant--; 
+	}
+}
+
+void Listas::eliminarfinal() {
+	Cartas* temp = joker; 
+	if (cant > 0) {
+		if (cant == 1) {
+
+			ultimacarta = ultimacarta->siguiente;
+			joker = ultimacarta;
+
+		}
+		else {
+			Cartas* pretemp = joker; 
+			temp = pretemp->siguiente;
+
+			while (temp!=ultimacarta)
+			{
+				pretemp = temp; 
+				temp = pretemp->siguiente; 
+			}
+
+			pretemp->siguiente = temp->siguiente;
+			ultimacarta = pretemp;
+		}
+		cant--;
+	}
+
+	
+}
+
+void Listas::eliminarposicion(int pos) {
+
+	Cartas* temp = joker; 
+	if (cant > 0) {
+
+		if (cant == 1 || pos == 0) {
+
+			eliminarinicio();
+		}
+		else {
+			if (pos >= cant) {
+
+				eliminarfinal(); 
+			}
+			else {
+			
+				Cartas* pretemp = joker; 
+				temp = pretemp->siguiente;
+				int contador = 1; 
+				
+				while ((temp) && contador < pos) {
+
+					pretemp = temp; 
+					temp = pretemp->siguiente; 
+					contador++; 
+
+				}
+				pretemp->siguiente = temp->siguiente;
+				cant--;
+			
+			}
+
+				
+		}
+	}
+}
+
+void Listas::agregarCarta(Cartas&x) {
+
 
 
 	if (cant == 0) {
-		*joker = x; 
+		joker = &x;
+		ultimacarta = &x; 
 	}
 	else {
-		Cartas* temp = joker;
-
-		while (temp->siguiente != nullptr)
-		{
-			temp = temp->siguiente;
-		}
-		*temp->siguiente = x; 
-
+		Cartas* temp = ultimacarta;
+		 
+		temp->siguiente = &x;
+		ultimacarta = &x;
 	}
 	cant++;
 
 }
 void Listas::eliminarCarta(int pos) {
-	if (cant == 0) {
+	if (pos == 0) {
 		joker = nullptr;
+		ultimacarta = nullptr;
 	
 	}
 	else {
@@ -43,15 +120,17 @@ void Listas::eliminarCarta(int pos) {
 			contador++; 
 		}
 		temp->siguiente = nullptr; 
-		
+		ultimacarta = temp; 
+		cant = contador + 1; 
 	}
-	cant--;
+	
+	
 }
 
-Cartas Listas::obtenerCarta(int pos) {
+Cartas* Listas::obtenerCarta(int pos) {
 
 	if (pos == 0) {
-		return *joker;
+		return joker;
 	}
 	else {
 		Cartas* temp = joker;
@@ -62,7 +141,7 @@ Cartas Listas::obtenerCarta(int pos) {
 			temp = temp->siguiente;
 			contador++;
 		}
-		return *temp;
+		return temp;
 
 	}
 	

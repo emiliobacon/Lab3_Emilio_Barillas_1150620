@@ -10,5 +10,7 @@ public:
 	Cartas(int num, char tono); //definir constructor 
 	void Mostrar();//procedimiento
 
+
+
 };
 
