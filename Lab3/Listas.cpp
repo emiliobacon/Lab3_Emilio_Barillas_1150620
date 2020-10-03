@@ -50,7 +50,7 @@ void Listas::eliminarfinal() {
 	
 }
 
-void Listas::eliminarposicion(int pos) {
+void Listas::eliminarposicion(int pos) { 
 
 	Cartas* temp = joker; 
 	if (cant > 0) {
