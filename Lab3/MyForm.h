@@ -29,7 +29,11 @@ namespace Lab3 {
 		Listas* grupo7 = new Listas();
 		int movimientos = 0; 
 		int tiempo = 0;
-	
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	public:
+
+
 
 		   int posicionmonton = 0;
 
@@ -61,6 +65,9 @@ namespace Lab3 {
 	public:
 	private: System::Windows::Forms::Label^ lblmovimiento;
 	private: System::Windows::Forms::Timer^ timer1;
+
+	public:
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	public:
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
@@ -69,6 +76,11 @@ namespace Lab3 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+	private: System::Windows::Forms::Label^ label4;
+
+
+
+
 
 
 
@@ -111,6 +123,13 @@ namespace Lab3 {
 			this->btnsiguiente = (gcnew System::Windows::Forms::Button());
 			this->lblmoton = (gcnew System::Windows::Forms::Label());
 			this->dataTablero = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -121,33 +140,34 @@ namespace Lab3 {
 			this->lbltiempo = (gcnew System::Windows::Forms::Label());
 			this->lblmovimiento = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataTablero))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnsiguiente
 			// 
-			this->btnsiguiente->Location = System::Drawing::Point(25, 416);
+			this->btnsiguiente->BackColor = System::Drawing::Color::Red;
+			this->btnsiguiente->Location = System::Drawing::Point(12, 191);
 			this->btnsiguiente->Name = L"btnsiguiente";
 			this->btnsiguiente->Size = System::Drawing::Size(132, 54);
 			this->btnsiguiente->TabIndex = 0;
-			this->btnsiguiente->Text = L"Cambiar Montón!";
-			this->btnsiguiente->UseVisualStyleBackColor = true;
+			this->btnsiguiente->Text = L"Cambiar Montón";
+			this->btnsiguiente->UseVisualStyleBackColor = false;
 			this->btnsiguiente->Click += gcnew System::EventHandler(this, &MyForm::btnsiguiente_Click);
 			// 
 			// lblmoton
 			// 
 			this->lblmoton->AutoSize = true;
-			this->lblmoton->Location = System::Drawing::Point(177, 437);
+			this->lblmoton->BackColor = System::Drawing::Color::Transparent;
+			this->lblmoton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblmoton->Location = System::Drawing::Point(57, 151);
 			this->lblmoton->Name = L"lblmoton";
-			this->lblmoton->Size = System::Drawing::Size(0, 13);
+			this->lblmoton->Size = System::Drawing::Size(30, 25);
 			this->lblmoton->TabIndex = 1;
+			this->lblmoton->Text = L"...";
 			// 
 			// dataTablero
 			// 
@@ -158,84 +178,144 @@ namespace Lab3 {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7
 			});
-			this->dataTablero->Location = System::Drawing::Point(25, 22);
+			this->dataTablero->Location = System::Drawing::Point(161, 9);
 			this->dataTablero->Name = L"dataTablero";
 			this->dataTablero->ReadOnly = true;
 			this->dataTablero->Size = System::Drawing::Size(795, 362);
 			this->dataTablero->TabIndex = 2;
 			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"-1-";
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"-2-";
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"-3-";
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"-4-";
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"-5-";
+			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"-6-";
+			this->Column6->Name = L"Column6";
+			this->Column6->ReadOnly = true;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"-7-";
+			this->Column7->Name = L"Column7";
+			this->Column7->ReadOnly = true;
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(271, 407);
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->Location = System::Drawing::Point(351, 415);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 13);
+			this->label1->Size = System::Drawing::Size(81, 26);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"posición";
+			this->label1->Text = L"Posición";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(406, 407);
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label2->Location = System::Drawing::Point(469, 414);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(66, 13);
+			this->label2->Size = System::Drawing::Size(126, 26);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"grupo origen";
+			this->label2->Text = L"Grupo Origen";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(523, 407);
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label3->Location = System::Drawing::Point(605, 415);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(71, 13);
+			this->label3->Size = System::Drawing::Size(134, 26);
 			this->label3->TabIndex = 5;
-			this->label3->Text = L"grupo destino";
+			this->label3->Text = L"Grupo Destino";
 			// 
 			// txtpos
 			// 
-			this->txtpos->Location = System::Drawing::Point(252, 434);
+			this->txtpos->Location = System::Drawing::Point(343, 444);
 			this->txtpos->Name = L"txtpos";
 			this->txtpos->Size = System::Drawing::Size(100, 20);
 			this->txtpos->TabIndex = 6;
 			// 
 			// txtorigen
 			// 
-			this->txtorigen->Location = System::Drawing::Point(388, 437);
+			this->txtorigen->Location = System::Drawing::Point(483, 444);
 			this->txtorigen->Name = L"txtorigen";
 			this->txtorigen->Size = System::Drawing::Size(100, 20);
 			this->txtorigen->TabIndex = 7;
 			// 
 			// txtdestino
 			// 
-			this->txtdestino->Location = System::Drawing::Point(526, 436);
+			this->txtdestino->Location = System::Drawing::Point(621, 444);
 			this->txtdestino->Name = L"txtdestino";
 			this->txtdestino->Size = System::Drawing::Size(100, 20);
 			this->txtdestino->TabIndex = 8;
 			// 
 			// btnaccion
 			// 
-			this->btnaccion->Location = System::Drawing::Point(654, 416);
+			this->btnaccion->BackColor = System::Drawing::Color::Lime;
+			this->btnaccion->Location = System::Drawing::Point(804, 410);
 			this->btnaccion->Name = L"btnaccion";
 			this->btnaccion->Size = System::Drawing::Size(152, 54);
 			this->btnaccion->TabIndex = 9;
-			this->btnaccion->Text = L"Mover!";
-			this->btnaccion->UseVisualStyleBackColor = true;
+			this->btnaccion->Text = L"Hacer Movimiento";
+			this->btnaccion->UseVisualStyleBackColor = false;
 			this->btnaccion->Click += gcnew System::EventHandler(this, &MyForm::btnaccion_Click);
 			// 
 			// lbltiempo
 			// 
 			this->lbltiempo->AutoSize = true;
-			this->lbltiempo->Location = System::Drawing::Point(40, 390);
+			this->lbltiempo->BackColor = System::Drawing::Color::Transparent;
+			this->lbltiempo->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbltiempo->Location = System::Drawing::Point(35, 298);
 			this->lbltiempo->Name = L"lbltiempo";
-			this->lbltiempo->Size = System::Drawing::Size(0, 13);
+			this->lbltiempo->Size = System::Drawing::Size(0, 18);
 			this->lbltiempo->TabIndex = 10;
 			// 
 			// lblmovimiento
 			// 
 			this->lblmovimiento->AutoSize = true;
-			this->lblmovimiento->Location = System::Drawing::Point(136, 390);
+			this->lblmovimiento->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblmovimiento->Location = System::Drawing::Point(131, 191);
 			this->lblmovimiento->Name = L"lblmovimiento";
-			this->lblmovimiento->Size = System::Drawing::Size(0, 13);
+			this->lblmovimiento->Size = System::Drawing::Size(0, 18);
 			this->lblmovimiento->TabIndex = 11;
 			// 
 			// timer1
@@ -244,53 +324,54 @@ namespace Lab3 {
 			this->timer1->Interval = 1000;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
-			// Column1
+			// label4
 			// 
-			this->Column1->HeaderText = L"";
-			this->Column1->Name = L"Column1";
-			this->Column1->ReadOnly = true;
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(34, 116);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(74, 24);
+			this->label4->TabIndex = 12;
+			this->label4->Text = L"Montón";
+			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
-			// Column2
+			// label5
 			// 
-			this->Column2->HeaderText = L"Column2";
-			this->Column2->Name = L"Column2";
-			this->Column2->ReadOnly = true;
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label5->Location = System::Drawing::Point(493, 376);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(143, 31);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"-Controles-";
 			// 
-			// Column3
+			// label6
 			// 
-			this->Column3->HeaderText = L"Column3";
-			this->Column3->Name = L"Column3";
-			this->Column3->ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Column4";
-			this->Column4->Name = L"Column4";
-			this->Column4->ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Column5";
-			this->Column5->Name = L"Column5";
-			this->Column5->ReadOnly = true;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Column6";
-			this->Column6->Name = L"Column6";
-			this->Column6->ReadOnly = true;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Column7";
-			this->Column7->Name = L"Column7";
-			this->Column7->ReadOnly = true;
+			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(34, 263);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(80, 24);
+			this->label6->TabIndex = 14;
+			this->label6->Text = L"Partida:";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(845, 554);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(969, 485);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->lblmovimiento);
 			this->Controls->Add(this->lbltiempo);
 			this->Controls->Add(this->btnaccion);
@@ -928,6 +1009,8 @@ private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 
 	tiempo++;
 	lbltiempo->Text = "Tiempo: " + tiempo + "s";
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 
